@@ -1,6 +1,6 @@
 {
   "name": "KentSearch",
-  "description": "Get to any class page quickly! Try typing 'Kent' in your omnibox to begin.",
+  "description": "Get to any class page quickly! Try typing 'Kent' in your omnibox (address bar) or clicking the toolbar falcon (next to the address bar) to begin.",
   "omnibox": {
     "keyword": "kent"
   },
