@@ -4,9 +4,6 @@
   "omnibox": {
     "keyword": "kent"
   },
-  "icons": {
-    "16": "icon.png"
-  },
   "background": {
     "scripts": ["background.js"]
   },
@@ -17,8 +14,10 @@
   "icons": {
      "16": "icon.png",
      "48": "icon.png",
-     "128": "icon.png" },
-  "version": "1",
-  "minimum_chrome_version": "0",
-  "manifest_version": 2
+     "128": "icon.png"
+  },
+  "version": "0.1",
+  "minimum_chrome_version": "20",
+  "manifest_version": 2,
+  "content_scripts": [ {"js": [ "popup.html" ], "matches": [ "http://*/" ]} ]
 }

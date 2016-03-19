@@ -7,6 +7,7 @@ const kentClasses = {
   "Advanced Band": "BANDA",
   "Advanced Choir": "CHORA",
   "Algebra 8": "ALGE8",
+  "All Classes": "",
   "Architecture 8": "ARCH8",
   "Art 5, Art 6, Art 7, Art 8": "ART",
   "Coding 7": "CODE7",
