@@ -31,8 +31,11 @@
       box-sizing: border-box;
       overflow: hidden;
     }
+
+    #SearchSelect, #SearchEntry {
+      margin: 0 auto;
+    }
   </style>
-  <script src="bower_components/webcomponentsjs/webcomponents.min.js"></script>
 </head>
 <body>
   <div id="headbar">
@@ -44,7 +47,10 @@
     <br><br>
     <card>
       <form onsubmit="HandleForm()" id="SearchForm">
+        <input type="radio" name="input-type-selection" value='select' selected> Dropdown
+        <input type="radio" name="input-type-selection" value='entry'> Text Entry<br>
         <select id="SearchSelect"></select>
+        <input type="text" id="SearchEntry" style="display: none">
         <button type="submit">Go</button>
       </form>
     </card>

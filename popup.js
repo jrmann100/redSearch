@@ -96,9 +96,13 @@ if (document.readyState !== 'loading'){
 }
 
 function HandleForm() {
-  var elem = document.getElementById('SearchSelect');
-  window.open("http://www.edlinesites.net/pages/Kent_Middle_School/Classes/" + elem.options[elem.selectedIndex].value);
-  //Figure out a way to open webpage from popup...
+  if(document.getElementById('SearchEntry').style.display === 'none'){
+    var elem = document.getElementById('SearchSelect');
+    window.open("http://www.edlinesites.net/pages/Kent_Middle_School/Classes/" + elem.options[elem.selectedIndex].value);
+  }else{
+    var elem = document.getElementById('SearchEntry');
+    window.open("http://www.edlinesites.net/pages/Kent_Middle_School/Classes/" + elem.value);
+  }
 }
 
 var form = document.getElementById('SearchForm');
@@ -106,4 +110,21 @@ if (form.attachEvent) {
     form.attachEvent("submit", HandleForm);
 } else {
     form.addEventListener("submit", HandleForm);
+}
+
+function replace_entry(value){
+  if(value === "select"){
+    document.getElementById('SearchEntry').style.display = 'none';
+    document.getElementById('SearchSelect').style.display = 'inline';
+  }else if(value === "entry"){
+    document.getElementById('SearchEntry').style.display = 'inline';
+    document.getElementById('SearchSelect').style.display = 'none';
+  }
+}
+
+radios = document.getElementsByName('input-type-selection')
+for(var i = 0; i < radios.length; i++){
+  radios[i].onclick = function(){
+    replace_entry(this.value);
+  }
 }
