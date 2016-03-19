@@ -1,17 +1,56 @@
 <!DOCTYPE html>
-<html align=center style="font-family:'Verdana'">
+<html lang="en" >
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <style>
+    body {
+      font-family: Roboto;
+      margin: 0 0;
+    }
+
+    #headbar {
+      background-color: #1E88E5;
+      width: 400px;
+      overflow: visible;
+      text-align: center;
+      height: 50px;
+      padding-top: 5px;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+    }
+    #content {
+      text-align: center;
+    }
+
+    card {
+      display: inline-block;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+      margin: 8px auto;
+      padding: 16px;
+      text-align: center;
+      box-sizing: border-box;
+      overflow: hidden;
+    }
+  </style>
+  <script src="bower_components/webcomponentsjs/webcomponents.min.js"></script>
+</head>
 <body>
-<form>
-  <fieldset>
-    <legend>
-      <img src="icon.png" width="50" height="50"><br>
-      <p style="font-size: 18px">KentSearch Extension</p>
-    </legend>
-    <p style="font-size: 14px">Try returning the Class ID of the class you want to access.<br>Don't remember? Enter a backslash (/) for a directory.</p>
-    <input id="theBox" style="font-family: 'Verdana'; text-align: center" type="text" name="firstname" placeholder="Your Class ID">
-    <input style="font-family: 'Verdana'; text-align: center" type="submit" value="Search">
-  </fieldset>
-</form>
-<script src="popup.js"></script>
-    </body>
+  <div id="headbar">
+    <img src="icon.png" width="70" height="70" id="logo">
+  </div><br>
+  <div id="content">
+    <p style="font-size: 30px; margin: 0 0; font-weight: bold">KentSearch Extension</p>
+    <i>Please select your class from the dropdown list below.</i>
+    <br><br>
+    <card>
+      <form onsubmit="HandleForm()" id="SearchForm">
+        <select id="SearchSelect"></select>
+        <button type="submit">Go</button>
+      </form>
+    </card>
+  </div>
+
+  <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.5/js/materialize.min.js"></script>
+  <script src="popup.js"></script>
+</body>
 </html>
