@@ -19,6 +19,5 @@
   "version": "0.1",
   "minimum_chrome_version": "20",
   "manifest_version": 2,
-  "content_scripts": [ {"js": [ "popup.html" ], "matches": [ "http://*/" ]} ],
-  "content_security_policy": "script-src 'self' 'unsafe-inline'; object-src 'self' 'unsafe-inline'"
+  "content_scripts": [ {"js": [ "popup.html" ], "matches": [ "http://*/" ]} ]
 }
