@@ -113,12 +113,12 @@ var formController = {
     document.getElementById('SearchEntry').style.display = 'none';
     document.getElementById('SearchSelect').style.display = 'inline';
     document.getElementById('SearchSelect').innerHTML = '';
-    for(let i of Object.keys(kentClasses)){
+    Object.keys(kentClasses).forEach(function(item, index){
       var elem = document.createElement('option');
-      elem.innerHTML = i;
-      elem.value = kentClasses[i];
+      elem.innerHTML = item;
+      elem.value = kentClasses[item];
       document.getElementById('SearchSelect').appendChild(elem);
-    }
+    });
     this.current_mode = 'select_name';
   },
   
@@ -126,12 +126,12 @@ var formController = {
     document.getElementById('SearchEntry').style.display = 'none';
     document.getElementById('SearchSelect').style.display = 'inline';
     document.getElementById('SearchSelect').innerHTML = '';
-    for(let i of Object.keys(kentClasses)){
+    Object.keys(kentClasses).forEach(function(item, index){
       var elem = document.createElement('option');
-      elem.innerHTML = kentClasses[i];
-      elem.value = kentClasses[i];
+      elem.innerHTML = kentClasses[item];
+      elem.value = kentClasses[item];
       document.getElementById('SearchSelect').appendChild(elem);
-    }
+    });
     this.current_mode = 'select_id';
   },
   
