@@ -112,7 +112,7 @@ var formController = {
   select_name: function() {
     document.getElementById('SearchEntry').style.display = 'none';
     document.getElementById('SearchSelect').innerHTML = '';
-    for(let i of keys(kentClasses)){
+    for(let i of Object.keys(kentClasses)){
       var elem = document.createElement('option');
       elem.innerHTML = i;
       elem.value = kentClasses[i];
@@ -124,7 +124,7 @@ var formController = {
   select_id: function() {
     document.getElementById('SearchEntry').style.display = 'none';
     document.getElementById('SearchSelect').innerHTML = '';
-    for(let i of keys(kentClasses)){
+    for(let i of Object.keys(kentClasses)){
       var elem = document.createElement('option');
       elem.innerHTML = kentClasses[i];
       elem.value = kentClasses[i];
