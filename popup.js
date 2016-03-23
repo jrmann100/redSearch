@@ -111,6 +111,7 @@ var formController = {
   },
   select_name: function() {
     document.getElementById('SearchEntry').style.display = 'none';
+    document.getElementById('SearchSelect').style.display = 'inline';
     document.getElementById('SearchSelect').innerHTML = '';
     for(let i of Object.keys(kentClasses)){
       var elem = document.createElement('option');
@@ -123,6 +124,7 @@ var formController = {
   
   select_id: function() {
     document.getElementById('SearchEntry').style.display = 'none';
+    document.getElementById('SearchSelect').style.display = 'inline';
     document.getElementById('SearchSelect').innerHTML = '';
     for(let i of Object.keys(kentClasses)){
       var elem = document.createElement('option');
