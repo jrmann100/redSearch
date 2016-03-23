@@ -99,8 +99,8 @@ var formController = {
   current_mode: 'select_name',
   refresh_mode: function() {
     //Use display properties and option value/innerHTML to determine mode.
-    if($('#SearchEntry').style.display === 'none'){
-      if($('#SearchSelect').children[0].value === $('#SearchSelect').children[0].innerHTML){
+    if(document.getElementById('SearchEntry').style.display === 'none'){
+      if(document.getElementById('SearchSelect').children[0].value === document.getElementById('SearchSelect').children[0].innerHTML){
         this.current_mode = 'select_id';
       }else{
         this.current_mode = 'select_name';
@@ -110,32 +110,32 @@ var formController = {
     }
   },
   select_name: function() {
-    $('#SearchEntry').style.display = 'none';
-    $('#SearchSelect').innerHTML = '';
+    document.getElementById('SearchEntry').style.display = 'none';
+    document.getElementById('SearchSelect').innerHTML = '';
     for(let i of keys(kentClasses)){
       var elem = document.createElement('option');
       elem.innerHTML = i;
       elem.value = kentClasses[i];
-      $('#SearchSelect').appendChild(elem);
+      document.getElementById('SearchSelect').appendChild(elem);
     }
     this.current_mode = 'select_name';
   },
   
   select_id: function() {
-    $('#SearchEntry').style.display = 'none';
-    $('#SearchSelect').innerHTML = '';
+    document.getElementById('SearchEntry').style.display = 'none';
+    document.getElementById('SearchSelect').innerHTML = '';
     for(let i of keys(kentClasses)){
       var elem = document.createElement('option');
       elem.innerHTML = kentClasses[i];
       elem.value = kentClasses[i];
-      $('#SearchSelect').appendChild(elem);
+      document.getElementById('SearchSelect').appendChild(elem);
     }
     this.current_mode = 'select_id';
   },
   
   textfield: function() {
-    $('#SearchSelect').style.display = 'none';
-    $('#SearchEntry').style.display = 'inline';
+    document.getElementById('SearchSelect').style.display = 'none';
+    document.getElementById('SearchEntry').style.display = 'inline';
     this.current_mode = 'textfield';
   }
 }
