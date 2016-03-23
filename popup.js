@@ -95,13 +95,59 @@ if (document.readyState !== 'loading'){
     }
 }
 
+var formController = {
+  current_mode: 'select_name',
+  refresh_mode: function() {
+    //Use display properties and option value/innerHTML to determine mode.
+    if($('#SearchEntry').style.display === 'none'){
+      if($('#SearchSelect').children[0].value === $('#SearchSelect').children[0].innerHTML){
+        this.current_mode = 'select_id';
+      }else{
+        this.current_mode = 'select_name';
+      }
+    }else{
+      this.current_mode = 'textfield';
+    }
+  },
+  select_name: function() {
+    $('#SearchEntry').style.display = 'none';
+    $('#SearchSelect').innerHTML = '';
+    for(let i of keys(kentClasses)){
+      var elem = document.createElement('option');
+      elem.innerHTML = i;
+      elem.value = kentClasses[i];
+      $('#SearchSelect').appendChild(elem);
+    }
+    this.current_mode = 'select_name';
+  },
+  
+  select_id: function() {
+    $('#SearchEntry').style.display = 'none';
+    $('#SearchSelect').innerHTML = '';
+    for(let i of keys(kentClasses)){
+      var elem = document.createElement('option');
+      elem.innerHTML = kentClasses[i];
+      elem.value = kentClasses[i];
+      $('#SearchSelect').appendChild(elem);
+    }
+    this.current_mode = 'select_id';
+  },
+  
+  textfield: function() {
+    $('#SearchSelect').style.display = 'none';
+    $('#SearchEntry').style.display = 'inline';
+    this.current_mode = 'textfield';
+  }
+}
+
 function HandleForm() {
-  if(document.getElementById('SearchEntry').style.display === 'none'){
+  if(formController.current_mode === 'select_name' ||
+     formController.current_mode === 'select_id'){
     var elem = document.getElementById('SearchSelect');
     window.open("http://www.edlinesites.net/pages/Kent_Middle_School/Classes/" + elem.options[elem.selectedIndex].value);
-  }else{
-    var elem = document.getElementById('SearchEntry');
-    window.open("http://www.edlinesites.net/pages/Kent_Middle_School/Classes/" + elem.value);
+  }else if(formController.current_mode === 'textfield'){
+    var element = document.getElementById('SearchEntry');
+    window.open("http://www.edlinesites.net/pages/Kent_Middle_School/Classes/" + element.value);
   }
 }
 
@@ -112,19 +158,9 @@ if (form.attachEvent) {
     form.addEventListener("submit", HandleForm);
 }
 
-function replace_entry(value){
-  if(value === "select"){
-    document.getElementById('SearchEntry').style.display = 'none';
-    document.getElementById('SearchSelect').style.display = 'inline';
-  }else if(value === "entry"){
-    document.getElementById('SearchEntry').style.display = 'inline';
-    document.getElementById('SearchSelect').style.display = 'none';
-  }
-}
-
 radios = document.getElementsByName('input-type-selection')
 for(var i = 0; i < radios.length; i++){
   radios[i].onclick = function(){
-    replace_entry(this.value);
+    formController[this.value]();
   }
 }
