@@ -1,1 +1,2 @@
 # kentSearch
+# Now using Slack!
