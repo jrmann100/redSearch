@@ -53,16 +53,16 @@
     <br><br>
     <card>
       <form onsubmit="HandleForm()" id="SearchForm">
-        <input type="radio" name="input-type-selection" value="select_name" checked="checked"> Name Selection<br>
-        <input type="radio" name="input-type-selection" value='select_id'> ID Selection<br>
-        <input type="radio" name="input-type-selection" value='textfield'> Text Entry<br>
         <select id="SearchSelect" style="display: inline;"></select>
         <input type="text" id="SearchEntry" style="display: none" placeholder="Class ID...">
-        <button type="submit">Go</button>
+        <button type="submit">Go</button><br><br>
+        <input type="radio" name="input-type-selection" value='select_id'> ID Selection
+        <input type="radio" name="input-type-selection" value='textfield'> Text Entry<br>
+        <input type="radio" name="input-type-selection" value="select_name" checked="checked"> Name Selection<br>
       </form>
     </card>
     <div id="footer">
-      <a id="aboutPage" style="color: darkblue; cursor: pointer;">About</a>
+      <a id="aboutPage" style="color: #283593; cursor: pointer; text-decoration: underline;">About</a>
       <i>v0.2</i>
     </div>
   </div>
