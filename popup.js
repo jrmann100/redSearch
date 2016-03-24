@@ -166,3 +166,7 @@ for(var i = 0; i < radios.length; i++){
     formController[this.value]();
   }
 }
+
+document.getElementById('aboutPage').onclick = function() {
+  window.open("http://broaderator.com/projects/kentSearch/about.html")
+}
