@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href='https://fonts.googleapis.com/css?family=Roboto:400,500,400italic' rel='stylesheet' type='text/css'>
+  <style>
+    body {
+      font-family: Roboto, sans-serif;
+      margin: 0 0;
+    }
+
+    #headbar {
+      background-color: #1E88E5;
+      width: 400px;
+      overflow: visible;
+      text-align: center;
+      height: 50px;
+      padding-top: 5px;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+    }
+    #content {
+      text-align: center;
+    }
+
+    card {
+      display: inline-block;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+      margin: 8px auto;
+      padding: 16px;
+      text-align: center;
+      box-sizing: border-box;
+      overflow: hidden;
+      border-radius: 2px;
+    }
+
+    #SearchSelect, #SearchEntry {
+      margin: 0 auto;
+    }
+    
+    #footer {
+      text-align: center;
+      font-size: 8px;
+    }
+  </style>
+</head>
+<body>
+  <div id="headbar">
+    <img src="icon.png" width="70" height="70" id="logo">
+  </div><br>
+  <div id="content">
+    <p style="font-size: 30px; margin: 10px; font-weight: bold">KentSearch</p>
+    <i>Please select your class from the dropdown list below<br> to view its class page.</i>
+    <br><br>
+    <card>
+      <form onsubmit="HandleForm()" id="SearchForm">
+      </form>
+    </card>
+    <div id="footer">
+      <a id="aboutPage" style="color: #283593; cursor: pointer; text-decoration: underline;">About</a>
+      <i>v0.2</i>
+    </div>
+  </div>
+
+  <script src="popup.js"></script>
+</body>
+</html>
