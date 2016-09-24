@@ -83,6 +83,7 @@ const kentClasses = {
 // class="back-to-main" for back to main searching tab
 // MultiTab should have tabs with names main, options, and about
 // id="search-error" for error bar (class undefined, try again!)
+// id="control-panel" for control panel (ui fluid card celled grid)
 
 $("#ks-shared-resource-identity").css("display", "none");
 $("#search-error").css("display", "none");
@@ -127,4 +128,7 @@ $("#submit-class-selection").click(function() {
 	parent.window.postMessage({
 		"*KsRedirectionHref*": "http://edlinesites.net/pages/Kent_Middle_School/Classes/" + kentClasses[classSelection]
 	}, "*");
+});
+$("#class-selection").keypress(function(e) {
+	if (e.which == 13) $("#submit-class-selection").click();
 });
