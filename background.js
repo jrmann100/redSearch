@@ -23,4 +23,3 @@ function navigate(url) {
 chrome.omnibox.onInputEntered.addListener(function(text) {
   navigate("http://www.edlinesites.net/pages/Kent_Middle_School/Classes/" + text);
 });
-

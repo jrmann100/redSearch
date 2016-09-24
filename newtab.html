@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link href='https://fonts.googleapis.com/css?family=Roboto:400,500,400italic' rel='stylesheet' type='text/css'>
+	<link rel="stylesheet" type="text/css" href="semantic/semantic.min.css">
+	<style>
+		body {
+			margin: 0 0;
+		}
+
+		#headbar {
+			background-color: #1E88E5;
+			width: 100%;
+			overflow: visible;
+			height: 50px;
+			padding: 10px;
+			vertical-align: middle;
+			color: #eee;
+			display: flex;
+			font-size: 20px;
+			text-align: center;
+		}
+
+		#headbar>p {
+			line-height: 30px;
+		}
+
+		input {
+			height: 30px;
+			width: 400px;
+		}
+
+		#opts {
+			background-color: #ccc;
+			height: 30px;
+			padding: 5px;
+			line-height: 20px;
+			text-align: left;
+		}
+
+		.right-most {
+			float: right;
+		}
+
+		.align-left {
+			float: left;
+			text-align: left;
+		}
+
+		#search-error {
+			font-size: 10px;
+			padding: 5px;
+			background-color: #d87b7b;
+		}
+	</style>
+</head>
+
+<body style="text-align: center">
+	<span id="ks-shared-resource-identity" this="newtab">popup.js failed to load!</span>
+	<multi-tab id="multiTab">
+		<div tab-name="main" default>
+			<div id="headbar">
+				<img src="icon.png" width="30" height="30" id="logo">
+				<div style="width: 10px"></div>
+				<p>KentSearch</p>
+				<div style="width: 10px"></div>
+				<div class="content ui search mini" style="height:30px;">
+					<div class="ui icon input">
+						<input class="prompt" id="class-selection" type="text" placeholder="Type subject here...">
+					</div>
+					<div class="results"></div>
+				</div>
+				<div style="width: 10px"></div>
+				<button class="ui button mini right-most" id="submit-class-selection" style="height:30px;">Search</button>
+			</div>
+			<div id="opts">
+				Version 0.4
+				<div class="right-most">
+					<i class="setting link icon" id="options"></i>
+					<i class="info link icon" id="about"></i>
+				</div>
+			</div>
+			<div id="search-error" class="red">
+				What class is that? Try again with the provided options only.
+			</div>
+		</div>
+		<div tab-name="options" style="padding:10px;" class="align-left">
+			<button class="ui labeled icon button back-to-main">
+				<i class="chevron left icon"></i>
+				Back to search
+			</button>
+		</div>
+		<div tab-name="about" class="align-left">
+			<button class="ui labeled icon button back-to-main">
+				<i class="chevron left icon"></i>
+				Back to search
+			</button>
+			<h2>KentSearch is mostly made by carbon.</h2>
+		</div>
+	</multi-tab>
+	<script src="lib/jquery.min.js"></script>
+	<script src="semantic/semantic.min.js"></script>
+	<script src="popup.js"></script>
+</body>
+
+</html>
