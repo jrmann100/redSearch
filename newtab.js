@@ -14,4 +14,13 @@
 //xml.send(null);
 //eval(xml.responseText); delete xml;
 
-document.getElementById("most-visited").innerHTML = "<iframe style='width: 100%; background:rgba(255,255,255,0.5); height: 300px;' src=\"" + chrome.extension.getURL("newtab.html") + "\" frameborder=\"0\"></iframe>";
+document.getElementById("most-visited").innerHTML = "<iframe id='iframe' style='width: 100%; background:rgba(255,255,255,0.5); height: 300px;' src=\"" + chrome.extension.getURL("popup.html") + "\" frameborder=\"0\"></iframe>";
+
+function waitForIframe() {
+	setTimeout(function() {
+		if(document.getElementById("iframe"))
+			window.frames.iframe.contentWindow.postMessage("newtab", "*")
+		else waitForIframe();
+	}, 20);
+}
+waitForIframe();

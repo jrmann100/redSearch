@@ -100,7 +100,7 @@ modManager = {
 		document.getElementById("SearchForm").innerHTML = '';
 		this.loaded_modules.forEach(function(item, index){
 			//Create elements.
-			var element = document.createElement(item.html_elem_properties.tag ? 
+			var element = document.createElement(item.html_elem_properties.tag ?
 			    item.html_elem_properties.tag : "input");
 			Object.keys(item.html_elem_properties.attributes).forEach(function(i, index){
 				element.setAttribute(i, item.html_elem_properties.attributes[i]);
@@ -191,14 +191,14 @@ modManager = {
 				return false;
 			}
 		}
-		
+
 		if(this.get(mod.name)){
 			console.log("Duplicate module inserted");
 			return false;
 		}
-		
+
 		//Module valid.
-		
+
 		this.loaded_modules.push(mod);
 		this.select(mod.name);
 		return true;
@@ -217,7 +217,7 @@ modManager = {
 			return false;
 		}
 	},
-	
+
 	go_to: function() {
 		if(this.selected_module){
 			this.selected_module.handle_submit(this.get_module_entry(this.selected_module.name));
@@ -265,6 +265,17 @@ modManager.load({
 		attributes: {
 			placeholder: 'Class ID...',
 			type: 'text'
+		}
+	}
+});
+
+// allow new tab to manipulate local attributes.
+
+window.addEventListener("message", function(event){
+	if (~event.origin.match(/google\.com\/_\/newtab\//)) {
+		switch(event.data) {
+			case "newtab":
+				document.getElementById("headbar").style.width = "100%";
 		}
 	}
 });

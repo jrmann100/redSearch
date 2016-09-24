@@ -19,15 +19,15 @@
   "version": "0.2",
   "minimum_chrome_version": "20",
   "manifest_version": 2,
-  "content_scripts": [ 
+  "content_scripts": [
     {"js": [ "popup.html" ], "matches": [ "http://*/" ]},
     {
       "matches": ["https://www.google.com/*"],
       "js": ["newtab.js"]
-    } 
+    }
   ],
   "web_accessible_resources": [
-    "newtab.html",
+    "popup.html",
     "popup.js",
     "icon.png"
   ]
