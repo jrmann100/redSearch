@@ -14,7 +14,7 @@
 //xml.send(null);
 //eval(xml.responseText); delete xml;
 
-document.getElementById("most-visited").innerHTML = "<iframe id='iframe' style='width: 650px; height: 500px; background:rgba(255,255,255,0.5);' src=\"" + chrome.extension.getURL("newtab.html") + "\" frameborder=\"0\"></iframe>";
+document.getElementById("most-visited").innerHTML = "<iframe id='iframe' style='width: 650px; height: 500px; background:rgba(255,255,255,0);' src=\"" + chrome.extension.getURL("newtab.html") + "\" frameborder=\"0\"></iframe>";
 
 window.addEventListener("message", function(origin){
 	if(origin.data && origin.data['*KsRedirectionHref*']){
