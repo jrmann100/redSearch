@@ -84,14 +84,23 @@ const kentClasses = {
 // MultiTab should have tabs with names main, options, and about
 // id="search-error" for error bar (class undefined, try again!)
 // id="control-panel" for control panel (ui fluid card celled grid)
-$(".ui.search").search.settings.onSearchQuery = function(){$('.results').append("<div style=\"right: 2px; bottom: 2px; position: absolute; font-size: 9px;\"><span>v0.4</span><i id=\"options\" class=\"setting link icon\"></i></div>");
-  $("#options").click(function() {
-    //mainMt.select("options");
-    parent.window.postMessage({"*KsRedirectionHref*": chrome.extension.getURL("options.html")}, "*");
-  });
+
+function redirect(newHTML) {
+  window.top !== window.self ? 
+    parent.window.postMessage({"*KsRedirectionHref*": newHTML}, "*") :
+    chrome.tabs.create({url: newHTML});
 }
+
+$(".ui.search").search.settings.onSearchQuery = function(){
+  $('.results').append("<div style=\"right: 2px; bottom: 2px; position: absolute; font-size: 9px;\"><span>v0.4</span><i id=\"options\" class=\"setting link icon\"></i></div>");
+  $("#options").click(function() {
+    redirect(chrome.extension.getURL("options.html"));
+  });
+};
+
 $("#ks-shared-resource-identity").css("display", "none");
 $("#search-error").css("display", "none");
+
 $(".ui.search").search({
 	source: (function() {
 		var output = [];
@@ -100,7 +109,9 @@ $(".ui.search").search({
 		return output;
 	})()
 });
+
 $('.results').append("<div style=\"right: 0; bottom: 0; position: absolute;\">v0.4</div>")
+
 MultiTab = function(mtElem) {
 	this.self = this;
 	this.elem = mtElem;
@@ -115,25 +126,24 @@ MultiTab = function(mtElem) {
 }
 
 mainMt = new MultiTab($("multi-tab"));
-//$("#options").click(function() {
-//	mainMt.select("options");
-//});
+
 $("#about").click(function() {
 	mainMt.select("about");
 });
+
 $(".back-to-main").click(function() {
 	mainMt.select("main");
 });
+
 $("#submit-class-selection").click(function() {
 	classSelection = $("#class-selection").val();
 	if(!(classSelection in kentClasses)){
 		$("#search-error").css("display", "block");
 		return;
 	}
-	parent.window.postMessage({
-		"*KsRedirectionHref*": "http://edlinesites.net/pages/Kent_Middle_School/Classes/" + kentClasses[classSelection]
-	}, "*");
+	redirect("http://edlinesites.net/pages/Kent_Middle_School/Classes/" + kentClasses[classSelection]);
 });
+
 $("#class-selection").keypress(function(e) {
 	if (e.which == 13) $("#submit-class-selection").click();
 });
