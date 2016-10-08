@@ -70,11 +70,11 @@ chrome.runtime.sendMessage({
 
 	$("#submit-class-selection").click(function() {
 		classSelection = $("#class-selection").val();
-		if(!(classSelection in kentClasses)){
+		if(!(classSelection in KentClasses)){
 			$("#search-error").css("display", "block");
 			return;
 		}
-		redirect("http://edlinesites.net/pages/Kent_Middle_School/Classes/" + kentClasses[classSelection]);
+		redirect("http://edlinesites.net/pages/Kent_Middle_School/Classes/" + KentClasses[classSelection]);
 	});
 
 	$("#class-selection").keypress(function(e) {

@@ -80,7 +80,7 @@ chrome.runtime.onMessage.addListener(function(req, sender, respond) {
 		// switch has more expandability than if...else
 		switch (req.requestVar) {
 			case "classes":
-				respond(kentClasses);
+				respond(KentClasses);
 		}
 	}
 });
