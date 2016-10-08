@@ -1,5 +1,4 @@
-
-document.KentClasses = {
+var KentClasses = {
 	"5th Grade Band": "BAND5",
 	"6th Grade Band": "BAND6",
 	"6th Grade Chorus": "CHOR6",
@@ -74,6 +73,17 @@ document.KentClasses = {
 	"Woodworking 5": "WOOD5",
 	"Woodworking 8": "WOOD8"
 };
+
+// if the sender is trying to retrieve KentSearch global data, send it to them
+chrome.runtime.onMessage.addListener(function(req, sender, respond) {
+	if (req.type = "*KsResourceRequest*") {
+		// switch has more expandability than if...else
+		switch (req.requestVar) {
+			case "classes":
+				respond(kentClasses);
+		}
+	}
+});
 
 const OmniBoxSuggestion = "Try returning your class ID. Don't remember? Enter a backslash for a directory.";
 
