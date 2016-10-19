@@ -81,4 +81,5 @@ chrome.runtime.sendMessage({
 		if (e.which == 13) $("#submit-class-selection").click();
 	});
 
+	$("body").css("visibility", "visible");
 });
