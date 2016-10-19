@@ -7,7 +7,7 @@
   "permissions": [
     "storage"
    ],
-  "options_page": "options.html",
+  // "options_page": "options.html", (removed for v0.5 release)
   "background": {
     "scripts": ["background.js"]
   },
@@ -20,7 +20,7 @@
      "48": "icon.png",
      "128": "icon.png"
   },
-  "version": "0.2",
+  "version": "0.5",
   "minimum_chrome_version": "44",
   "manifest_version": 2,
   "content_scripts": [
