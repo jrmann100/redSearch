@@ -15,9 +15,9 @@ var KentClasses = {
 	"Core 6 - Ms. Bridges": "CORE6-BRI",
 	"Core 6 - Wells": "CORE6-WEL",
 	"Drama 7": "DRAM7",
-	"ELA/History Core 5 - Torrano": "ELAH5-TOR",
+	"ELA/History Core 5 - Torrano": "ELAH5-TOR", // no longer valid
 	"ELA/History Core 5 - Hagan": "ELAH5-HAG",
-	"ELA/History Core 5 - Jelen": "ELAH5-JEL",
+	"ELA/History Core 5 - Jelen": "ELAH5-JEL", // no longer valid
 	"ELA/History Core 5 - Stephens": "ELAH5-STE",
 	"English Language Development": "ELD",
 	"Enterprise 7": "ENTR7",
@@ -32,10 +32,10 @@ var KentClasses = {
 	"Extended Reading": "READX",
 	"Film Making": "FILM78",
 	"History 6 - Goetz": "HIST6-GOE",
-	"History 7 - Mr. Palmer": "HIST7-PAL",
-	"History 7 - Ms. Ward": "HIST7-WAR",
-	"History 8 - Mr. Palmer": "HIST8-PAL",
-	"History 8 - Ms. Ward": "HIST8-WAR",
+	"History 7 - Mr. Palmer": "https://sites.google.com/a/kentfieldschools.org/palmer-ush/home",
+	"History 7 - Ms. Ward": "https://sites.google.com/a/kentfieldschools.org/ms-ward-s-webpage/home",
+	"History 8 - Mr. Palmer": "https://sites.google.com/a/kentfieldschools.org/palmer-ush/home",
+	"History 8 - Ms. Ward": "https://sites.google.com/a/kentfieldschools.org/ms-ward-s-webpage/home",
 	"Jazz Big Band": "BANDB",
 	"Jazz Combo": "JAZZC",
 	"Journalism 8": "JOUR8",
@@ -68,8 +68,8 @@ var KentClasses = {
 	"Science 6": "SCI6",
 	"Science 7": "SCI7",
 	"Science 8": "SCI8",
-	"Spanish A": "SPANA",
-	"Spanish B": "SPANB",
+	"Spanish A": "https://sites.google.com/a/kentfieldschools.org/mrs-roubinian-spanish/",
+	"Spanish B": "https://sites.google.com/a/kentfieldschools.org/ncalmels/",
 	"Woodworking 5": "WOOD5",
 	"Woodworking 8": "WOOD8"
 };
