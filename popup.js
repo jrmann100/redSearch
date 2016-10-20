@@ -26,7 +26,6 @@ chrome.runtime.sendMessage({
 	};
 
 	$("#scriptfail").css("display", "none");
-	$("#search-error").css("display", "none");
 
 	$(".ui.search").search({
 		source: (function() {
@@ -39,20 +38,31 @@ chrome.runtime.sendMessage({
 
 	$('.results').append("<div style=\"right: 0; bottom: 0; position: absolute;\">v0.4</div>")
 
+	var errorVisible = false;
+
 	$("#submit-class-selection").click(function() {
 		classSelection = $("#class-selection").val();
 		if(!(classSelection in KentClasses)){
-			$("#search-error").css("display", "block");
+			if (errorVisible == false) {
+				$("#search-error").css("margin-top", "0");
+				errorVisible = true;
+			}
 			return;
 		}
-		redirect(KentClasses[classSelection].startsWith("http") ? 
+		redirect(KentClasses[classSelection].match("http(s)?://") != null ? 
 			KentClasses[classSelection] :
 			"http://edlinesites.net/pages/Kent_Middle_School/Classes/" + KentClasses[classSelection]);
 	});
 
-	$("#class-selection").keypress(function(e) {
-		if (e.which == 13) $("#submit-class-selection").click();
-	});
+	$("#class-selection")
+		.keyup(function(e) {
+			if (e.which == 13) {
+				$("#submit-class-selection").click();
+			} else if (errorVisible == true) {
+				$("#search-error").css("margin-top", "-33px");
+				errorVisible = false;
+			}
+		});
 
 	$("body").css("visibility", "visible");
 });

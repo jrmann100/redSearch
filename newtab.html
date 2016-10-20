@@ -40,6 +40,10 @@
 			font-size: 15px;
 			padding: 5px;
 			background-color: #d87b7b;
+			transition: all 0.5s cubic-bezier(0.0, 0.0, 0.2, 1);
+			margin-top: -33px;
+			margin-left: 15px;
+			margin-right: 15px;
 		}
 	</style>
 </head>
@@ -57,12 +61,12 @@
 			<div class="ui search action input">
 				<input style="max-width: 672px; position: relative; width: 618px;" class="prompt" id="class-selection" type="text" placeholder="Enter a Kent class&hellip;">
 				<button id="submit-class-selection" class="ui icon button" style="padding: 0em; border-top-right-radius: 5px; border-bottom-right-radius: 5px;">
-			<img id="submit-class-selection" style="height:40px;" src="icon.png"></img>
-			</button>
+					<img id="submit-class-selection" style="height:40px;" src="icon.png"></img>
+				</button>
 			</div>
 	</div>
-	<!-- TODO in v0.6: use Semantic accordion to control the following error message. -->
-	<div id="search-error" class="red">
+
+	<div class="red" id="search-error">
 		What class is that? Try again with the provided options only.
 	</div>
 		
