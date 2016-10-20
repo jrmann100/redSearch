@@ -19,13 +19,6 @@
 			width: 400px;
 			border-radius: 5px;
 		}
-		/*#opts {
-			background-color: #ccc;
-			height: 30px;
-			padding: 5px;
-			line-height: 20px;
-			text-align: left;
-		}*/
 
 		.right-most {
 			float: right;
@@ -39,7 +32,8 @@
 		#search-error {
 			font-size: 15px;
 			padding: 5px;
-			background-color: #d87b7b;
+			background-color: #B71C1C;
+			color: #fefefe;
 			transition: all 0.5s cubic-bezier(0.0, 0.0, 0.2, 1);
 			margin-top: -33px;
 			margin-left: 15px;
@@ -66,10 +60,10 @@
 			</div>
 	</div>
 
-	<div class="red" id="search-error">
-		What class is that? Try again with the provided options only.
+	<div id="search-error">
+		That class does not exist. Try again!
 	</div>
-		
+
 	<script src="lib/jquery.min.js"></script>
 	<script src="semantic/semantic.min.js"></script>
 	<script defer src="popup.js"></script>

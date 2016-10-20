@@ -132,7 +132,8 @@ var KentClasses = {
 		"classCode": "ELA7-MOR"
 	},
 	"Language Arts 8 - Anderson": {
-		"classCode": "ELA8-AND"
+		"classCode": "ELA8-AND",
+		"specialUrl": "https://classroom.google.com/u/1/c/MjExMzYxMzQ0MFpa"
 	},
 	"Language Arts 8 - Gavin": {
 		"classCode": "ELA8-GAV"
@@ -199,6 +200,7 @@ var KentClasses = {
 	},
 	"Science 8": {
 		"classCode": "SCI8"
+		"specialUrl": "https://classroom.google.com/u/1/c/MTk0MTM5NjYzM1pa";
 	},
 	"Spanish A": {
 		"classCode": "SPANA",

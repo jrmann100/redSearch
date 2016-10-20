@@ -1,4 +1,5 @@
 var KentClasses;
+var KCVersion = "v0.5.4";
 
 // retrieve the classes
 chrome.runtime.sendMessage({
@@ -13,13 +14,17 @@ chrome.runtime.sendMessage({
 	// id="search-error" for error bar (class undefined, try again!)
 
 	function redirect(newHTML) {
-		window.top !== window.self ? 
+		window.top !== window.self ?
 			parent.window.postMessage({"*KsRedirectionHref*": newHTML}, "*") :
 			chrome.tabs.create({url: newHTML});
 	}
 
 	$(".ui.search").search.settings.onSearchQuery = function(){
-		$('.results').append("<div style=\"right: 2px; bottom: 2px; position: absolute; font-size: 9px;\"><span>v0.4</span><i id=\"options\" class=\"setting link icon\"></i></div>");
+		$('.results').append(
+			`<div style="right: 2px; bottom: 2px; position: absolute; font-size: 9px;">
+				<span>${KCVersion}</span>
+				<i id="options" class="setting link icon"></i>
+			</div>`);
 		$("#options").click(function() {
 			redirect(chrome.extension.getURL("options.html"));
 		});
@@ -36,21 +41,21 @@ chrome.runtime.sendMessage({
 		})()
 	});
 
-	$('.results').append("<div style=\"right: 0; bottom: 0; position: absolute;\">v0.4</div>")
-
 	var errorVisible = false;
 
 	$("#submit-class-selection").click(function() {
 		classSelection = $("#class-selection").val();
 		if(!(classSelection in KentClasses)){
 			if (errorVisible == false) {
-				$("#search-error").css("margin-top", "0");
+				$("#search-error")
+					.css("margin-top", "0")
+					.css("visibility", "visible");
 				errorVisible = true;
 			}
 			return;
 		}
 		redirect(
-			KentClasses[classSelection].specialUrl || 
+			KentClasses[classSelection].specialUrl ||
 			"http://edlinesites.net/pages/Kent_Middle_School/Classes/" + KentClasses[classSelection].classCode);
 	});
 
@@ -59,7 +64,9 @@ chrome.runtime.sendMessage({
 			if (e.which == 13) {
 				$("#submit-class-selection").click();
 			} else if (errorVisible == true) {
-				$("#search-error").css("margin-top", "-33px");
+				$("#search-error")
+					.css("margin-top", "-33px")
+					.css("visibility", "hidden");
 				errorVisible = false;
 			}
 		});
