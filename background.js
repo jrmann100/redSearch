@@ -199,7 +199,7 @@ var KentClasses = {
 		"classCode": "SCI7"
 	},
 	"Science 8": {
-		"classCode": "SCI8"
+		"classCode": "SCI8",
 		"specialUrl": "https://classroom.google.com/u/1/c/MTk0MTM5NjYzM1pa"
 	},
 	"Spanish A": {
