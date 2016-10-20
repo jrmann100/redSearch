@@ -1,3 +1,4 @@
 # KentSearch
 
-To get the libraries for this repository, visit [here](https://broaderator.com/private/kentsearch-lib.zip).
+
+To get the libraries for this repository, visit [here](http://broaderator.com/private/kentsearch-lib.zip).
