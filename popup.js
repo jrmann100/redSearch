@@ -49,9 +49,9 @@ chrome.runtime.sendMessage({
 			}
 			return;
 		}
-		redirect(KentClasses[classSelection].match("http(s)?://") != null ? 
-			KentClasses[classSelection] :
-			"http://edlinesites.net/pages/Kent_Middle_School/Classes/" + KentClasses[classSelection]);
+		redirect(
+			KentClasses[classSelection].specialUrl || 
+			"http://edlinesites.net/pages/Kent_Middle_School/Classes/" + KentClasses[classSelection].classCode);
 	});
 
 	$("#class-selection")
