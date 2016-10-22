@@ -1,5 +1,5 @@
 # KentSearch
-**Current version: v0.5.4**
+**Current version: v0.5.5**
 
 To get the libraries for this repository, visit [here](http://broaderator.com/private/kentsearch*lib.zip).
 

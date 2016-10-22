@@ -1,5 +1,5 @@
 var KentClasses;
-var KCVersion = "v0.5.4";
+var KCVersion = "v0.5.5";
 
 // retrieve the classes
 chrome.runtime.sendMessage({
@@ -46,7 +46,7 @@ chrome.runtime.sendMessage({
 	$("#submit-class-selection").click(function() {
 		classSelection = $("#class-selection").val();
 		if(!(classSelection in KentClasses)){
-			if (errorVisible == false) {
+			if (!errorVisible) {
 				$("#search-error")
 					.css("margin-top", "0")
 					.css("visibility", "visible");
@@ -63,13 +63,22 @@ chrome.runtime.sendMessage({
 		.keyup(function(e) {
 			if (e.which == 13) {
 				$("#submit-class-selection").click();
-			} else if (errorVisible == true) {
+			} else if (errorVisible) {
 				$("#search-error")
-					.css("margin-top", "-33px")
+					.css("margin-top", "-40px")
 					.css("visibility", "hidden");
 				errorVisible = false;
 			}
 		});
+
+	$(".ks-help").click(function(e) {
+		chrome.runtime.sendMessage({
+			"type": "*KsResourceRequest*",
+			"requestVar": "url"
+		}, function(response) {
+			redirect(response + "options.html");
+		});
+	});
 
 	$("body").css("visibility", "visible");
 });

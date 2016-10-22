@@ -225,6 +225,8 @@ chrome.runtime.onMessage.addListener(function(req, sender, respond) {
 		switch (req.requestVar) {
 			case "classes":
 				respond(KentClasses);
+			case "url":
+				respond(chrome.extension.getURL(""))
 		}
 	}
 });
