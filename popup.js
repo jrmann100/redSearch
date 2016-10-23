@@ -42,16 +42,35 @@ chrome.runtime.sendMessage({
 	});
 
 	var errorVisible = false;
+	var errorElement = $("#search-error");
+
+	function highlightError() {
+		if (errorVisible) {
+			errorElement.css("transform", "scale(1.1)");
+			setTimeout(function() {
+				errorElement.css("transform", "initial");
+			}, 150);
+		} else {
+			errorElement
+				.css("margin-top", "0")
+				.css("visibility", "visible");
+			errorVisible = true;
+		}
+	}
+
+	function hideError() {
+		if (errorVisible) {
+			errorElement
+				.css("margin-top", "-36px")
+				.css("visibility", "hidden");
+			errorVisible = false;
+		}
+	}
 
 	$("#submit-class-selection").click(function() {
 		classSelection = $("#class-selection").val();
 		if(!(classSelection in KentClasses)){
-			if (!errorVisible) {
-				$("#search-error")
-					.css("margin-top", "0")
-					.css("visibility", "visible");
-				errorVisible = true;
-			}
+			highlightError();
 			return;
 		}
 		redirect(
@@ -63,11 +82,8 @@ chrome.runtime.sendMessage({
 		.keyup(function(e) {
 			if (e.which == 13) {
 				$("#submit-class-selection").click();
-			} else if (errorVisible) {
-				$("#search-error")
-					.css("margin-top", "-40px")
-					.css("visibility", "hidden");
-				errorVisible = false;
+			} else {
+				hideError();
 			}
 		});
 

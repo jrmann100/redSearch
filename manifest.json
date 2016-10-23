@@ -25,7 +25,9 @@
   "manifest_version": 2,
   "content_scripts": [
     {
-      "matches": ["https://www.google.com/_/chrome/newtab*"],
+      "matches": [
+        "https://www.google.com/_/chrome/newtab*"
+      ],
       "js": ["newtab.js"]
     }
   ],
