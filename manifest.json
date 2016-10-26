@@ -5,7 +5,8 @@
     "keyword": "kent"
   },
   "permissions": [
-    "storage"
+    "storage",
+		"http://broaderator.com/"
    ],
   "options_page": "options.html",
   "background": {
@@ -36,5 +37,6 @@
     "popup.js",
     "icon.png",
     "options.html"
-  ]
+  ],
+	"update_url": "http://broaderator.com/projects/kentSearch/update.xml"
 }
