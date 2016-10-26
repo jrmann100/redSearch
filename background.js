@@ -2,15 +2,15 @@ var KentClasses;
 
 function fetchClasses() {
 	var ajax = new XMLHttpRequest();
-	ajax.onload = function(ev) {
-		KentClasses = JSON.parse(ev.responseText);
+	ajax.onload = function() {
+		KentClasses = JSON.parse(this.responseText);
 	};
 	ajax.open("GET", "http://broaderator.com/projects/kentSearch/classes.json");
 	ajax.send();
 }
 
 fetchClasses();
-setInterval(fetchClasses, 1000 * 60 * 60);
+setInterval(fetchClasses, 1000 * 60 * 30);
 
 // if the sender is trying to retrieve KentSearch global data, send it to them
 chrome.runtime.onMessage.addListener(function(req, sender, respond) {

@@ -1,5 +1,5 @@
 var KentClasses;
-var KCVersion = "v0.5.5";
+var KCVersion = "v0.5.6";
 
 // retrieve the classes
 chrome.runtime.sendMessage({
@@ -67,9 +67,18 @@ chrome.runtime.sendMessage({
 		}
 	}
 
+	function includedIn(elem, obj) {
+		for (var key in obj) {
+			if (elem.toLowerCase() == key.toLowerCase())
+				return key;
+		}
+		return false;
+	}
+
 	$("#submit-class-selection").click(function() {
-		classSelection = $("#class-selection").val();
-		if(!(classSelection in KentClasses)){
+		var classSelection = includedIn($("#class-selection").val(), KentClasses);
+
+		if (!classSelection) {
 			highlightError();
 			return;
 		}
