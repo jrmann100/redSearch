@@ -37,6 +37,5 @@
     "popup.js",
     "icon.png",
     "options.html"
-  ],
-	"update_url": "http://broaderator.com/projects/kentSearch/update.xml"
+  ]
 }
