@@ -1,5 +1,5 @@
 var KentClasses;
-var KCVersion = "v0.5.6";
+var KCVersion = "v0.6";
 
 // retrieve the classes
 chrome.runtime.sendMessage({
