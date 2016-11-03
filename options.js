@@ -30,10 +30,10 @@ $("#problem-report").submit(function(evt) {
 		data: JSON.stringify(formData),
 		type: "POST",
 		headers: {
-			"Authorization": "token 8327e605215af283272522e48803d7ec0f5e9a63"
+			"Authorization": "token f6219e1468cf6760a3139f645d9c210371ee1d4e"
 		},
 		success: function(data) {
-			displayMessage(`Your issue has been submitted <i href="${data.url}">here</i>. All is well!`);
+			displayMessage(`Your issue has been submitted <a href="${data.url}">here</a>. All is well!`);
 		},
 		error: function(data) {
 			var parsed = JSON.parse(data);
