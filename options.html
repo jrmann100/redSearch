@@ -5,37 +5,21 @@
 		<link rel="stylesheet" type="text/css" href="semantic/semantic.min.css">
 	</head>
 	<body>
-		<div class="ui centered middle aligned grid" id="card-container" style="height:100%;">
+		<div class="ui centered middle aligned grid" id="card-container">
 			<div class="five wide column">
 
 			</div>
 			<div class="five wide column">
 
-				<div class="ui centered cards">
-					<div class="card" style="width: 500px;">
-						<div class="content">
-							<div class="header">Report a Problem</div>
-							<br>
-							<form class="ui big form" id="problem-report">
-								<div class="field">
-									<label>Summary</label>
-									<input type="text" name="title" placeholder="My KentSearch sucks!">
-								</div>
-								<div class="field">
-									<label>Details</label>
-									<textarea name="body" placeholder="It doesn't make sandwiches the way I want it to."></textarea>
-								</div>
-								<button class="ui button" type="submit" id="submit-problem">Submit</button>
-							</form>
-						</div>
-					</div>
-				</div>
-				<div id="msg-ctr" style="text-align: center; display: none; width: 100%;"></div>
+
 			</div>
 			<div class="five wide column">
 
 			</div>
 		</div>
+		<a href="https://gitreports.com/issue/broad-well/kentSearch">
+			<button id="issue" class="ui secondary button">Submit an Issue</button>
+		</a>
 		<script src="lib/jquery.min.js"></script>
 		<script src="semantic/semantic.min.js"></script>
 		<script defer src="options.js"></script>
