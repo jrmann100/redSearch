@@ -1,9 +1,9 @@
 # Goals and values for KentSearch
 
-*KentSearch* is a powerful and simplistic Chrome extension that makes accessing a class webpage easy for a Kent Falcon. Its development is focused around the following basic principles, at any time:
+*KentSearch* is a powerful and simplistic Chrome extension that makes accessing a class webpage easier for a Kent Falcon. Its development is focused around the following basic principles:
 
 ```
-The Zen of Python, by Tim Peters, modified by KentSearch
+The Zen of Python, by Tim Peters
 
 Beautiful is better than ugly.
 Explicit is better than implicit.
@@ -18,10 +18,12 @@ Errors should never pass silently.
 Unless explicitly silenced.
 In the face of ambiguity, refuse the temptation to guess.
 There should be one-- and preferably only one --obvious way to do it.
-Although that way may not be obvious at first unless you're Canadian.
+Although that way may not be obvious at first unless you're Dutch.
 Now is better than never.
+Although never is often better than *right* now.
 If the implementation is hard to explain, it's a bad idea.
 If the implementation is easy to explain, it may be a good idea.
+Namespaces are one honking great idea -- let's do more of those!
 ```
 
 - Embrace functional programming
