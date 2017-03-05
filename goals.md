@@ -26,7 +26,6 @@ If the implementation is easy to explain, it may be a good idea.
 Namespaces are one honking great idea -- let's do more of those!
 ```
 
-- Embrace functional programming
 - Use simplest implementation possible
 - Avoid ambiguity
 - Respect user's privacy

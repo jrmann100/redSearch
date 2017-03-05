@@ -32,15 +32,6 @@ chrome.runtime.sendMessage({
 
   $("#scriptfail").css("display", "none");
 
-  $(".ui.search").search({
-    source: (function() {
-      var output = [];
-      for(var key in KentClasses)
-        output.push({title: key})
-      return output;
-    })()
-  });
-
   var errorVisible = false;
   var errorElement = $("#search-error");
 
@@ -72,12 +63,12 @@ chrome.runtime.sendMessage({
    * 
    * For search box resolution, use `getClassByQuery()`. For now, that function provides name matching and class code matching as resolution methods. More may be added in the future.
    * 
-   * For Semantic-UI autocomplete data, use `getAutocompleteTags()`. This function fully conforms to Semantic-UI APIs.
+   * For Semantic-UI `.search` data, use `getAutocompleteTags()`. This function fully conforms to Semantic-UI APIs.
    */
 
 
    /**
-    * ## Tries to retrieve a Kent class using the capture provided, usually straight from the search box.
+    * Tries to retrieve a Kent class using the capture provided, usually straight from the search box.
     *
     * Methods implemented at the moment:
     *  - Case-insensitive class name matching ("Drama 7", for example)
@@ -104,13 +95,24 @@ chrome.runtime.sendMessage({
    }
 
    /**
-    * ## Composes information from all stored Kent classes in a way that's compatible with the Semantic-UI autocomplete API.
+    * Composes information from all stored Kent classes in a way that's compatible with the Semantic-UI autocomplete API.
     * 
-    * @returns the tag object, ready to be fed into Semantic-UI's `autocomplete` function.
+    * @returns the tag object, ready to be fed into Semantic-UI's `search` function.
     */
    function getAutocompleteTags() {
-     // TODO: get this function done with help from Semantic documentation
+     var output = [];
+     for (var key in KentClasses) {
+       output.push({
+         title: key,
+         description: KentClasses[key].classCode
+       });
+     }
+     return output;
    }
+
+   $(".ui.search").search({
+     source: getAutocompleteTags()
+   });
 
   $("#submit-class-selection").click(function() {
     var className = getClassByQuery($("#class-selection").val());

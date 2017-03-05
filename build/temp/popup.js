@@ -32,15 +32,6 @@ chrome.runtime.sendMessage({
 
   $("#scriptfail").css("display", "none");
 
-  $(".ui.search").search({
-    source: (function() {
-      var output = [];
-      for(var key in KentClasses)
-        output.push({title: key})
-      return output;
-    })()
-  });
-
   var errorVisible = false;
   var errorElement = $("#search-error");
 
@@ -104,13 +95,24 @@ chrome.runtime.sendMessage({
    }
 
    /**
-    * ## Composes information from all stored Kent classes in a way that's compatible with the Semantic-UI autocomplete API.
+    * Composes information from all stored Kent classes in a way that's compatible with the Semantic-UI autocomplete API.
     * 
-    * @returns the tag object, ready to be fed into Semantic-UI's `autocomplete` function.
+    * @returns the tag object, ready to be fed into Semantic-UI's `search` function.
     */
    function getAutocompleteTags() {
-     // TODO: get this function done with reference to Semantic documentation
+     var output = [];
+     for (var key in KentClasses) {
+       output.push({
+         title: key,
+         description: KentClasses[key].classCode
+       });
+     }
+     return output;
    }
+
+   $(".ui.search").search({
+     source: getAutocompleteTags()
+   });
 
   $("#submit-class-selection").click(function() {
     var className = getClassByQuery($("#class-selection").val());
