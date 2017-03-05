@@ -36,7 +36,7 @@ chrome.runtime.onMessage.addListener(function(req, sender, respond) {
 	}
 });
 
-const OmniBoxSuggestion = "Try returning your class ID. Don't remember? Enter a backslash for a directory.";
+const OmniBoxSuggestion = "Try returning your class name or class ID. Don't remember? Return for a directory.";
 
 function resetDefaultSuggestion() {
 	chrome.omnibox.setDefaultSuggestion({

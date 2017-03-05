@@ -63,12 +63,12 @@ chrome.runtime.sendMessage({
    * 
    * For search box resolution, use `getClassByQuery()`. For now, that function provides name matching and class code matching as resolution methods. More may be added in the future.
    * 
-   * For Semantic-UI autocomplete data, use `getAutocompleteTags()`. This function fully conforms to Semantic-UI APIs.
+   * For Semantic-UI `.search` data, use `getAutocompleteTags()`. This function fully conforms to Semantic-UI APIs.
    */
 
 
    /**
-    * ## Tries to retrieve a Kent class using the capture provided, usually straight from the search box.
+    * Tries to retrieve a Kent class using the capture provided, usually straight from the search box.
     *
     * Methods implemented at the moment:
     *  - Case-insensitive class name matching ("Drama 7", for example)
