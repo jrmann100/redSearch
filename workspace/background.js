@@ -60,15 +60,10 @@ function isValidClassCode(ccode) {
 	return false;
 }
 
-const EdlinePrefix = "http://www.edlinesites.net/pages/Kent_Middle_School/Classes/";
 var currentSpecialUrl;
 
 chrome.omnibox.onInputEntered.addListener(function(text) {
-	if (currentSpecialUrl = isValidClassCode(text.toUpperCase())){
-		navigate((typeof currentSpecialUrl == "string") ?
-			currentSpecialUrl :
-			EdlinePrefix + text);
-	} else if (text in KentClasses) {
+	if (text in KentClasses) {
 		navigate(KentClasses[text].specialUrl || EdlinePrefix + KentClasses[text].classCode);
 	} else {
 		alert(`Class ${text} does not exist. Try again!`);
