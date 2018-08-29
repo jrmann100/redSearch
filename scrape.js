@@ -1,0 +1,2 @@
+// https://www.tamdistrict.org/site/Default.aspx?PageType=1&ChannelID=169
+// dict = {}; Array.from(document.getElementsByClassName("sw-directory-item")).forEach((i) => {dict[i.innerHTML] = {"classCode" : i.innerText.split(",")[0].toUpperCase(), "specialUrl": i.href}}); JSON.stringify(dict);
