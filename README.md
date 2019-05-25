@@ -3,7 +3,7 @@
 
 ## How to install
 
- 1. [Download](https://github.com/jrmann100/redSearch/archive/master.zip) and unzip, or clone, this repository.
+ 1. [Download](https://github.com/jrmann100/redSearch/archive/master.zip) _and unzip,_ or clone, this repository.
  2. In Google Chrome, navigate to `chrome://extensions` and enable `Developer mode` using the switch near the top of the page.
  (Developer mode sounds scary, but it simply allows you to install this extension outside of the Chrome Web Store. Note that most managed user profiles disable this feature, so you might need to use a non-school Chrome profile.
  3. Drag-and-drop the downloaded extension into the browser window. This is equivalent to selecting `Load unpacked` near the top of the window.
