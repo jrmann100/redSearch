@@ -32,7 +32,7 @@ chrome.runtime.onMessage.addListener(function(req, sender, respond) {
 	}
 });
 
-const OmniBoxSuggestion = "Try returning your teacher's last name. Don't remember? Enter a backslash (/) for a directory.";
+const OmniBoxSuggestion = "Try entering a teacher's last name.";
 
 function resetDefaultSuggestion() {
 	chrome.omnibox.setDefaultSuggestion({
@@ -54,23 +54,18 @@ function navigate(url) {
 function isValidClassCode(ccode) {
 	for (var key in KentClasses) {
 		if (KentClasses[key].classCode === ccode) {
-			return KentClasses[key].specialUrl || true;
+			return KentClasses[key].URL || true;
 		}
 	}
 	return false;
 }
 
-const EdlinePrefix = "http://www.edlinesites.net/pages/Kent_Middle_School/Classes/";
-var currentSpecialUrl;
+var URL;
 
 chrome.omnibox.onInputEntered.addListener(function(text) {
-	if (currentSpecialUrl = isValidClassCode(text.toUpperCase())){
-		navigate((typeof currentSpecialUrl == "string") ?
-			currentSpecialUrl :
-			EdlinePrefix + text);
-	} else if (text in KentClasses) {
-		navigate(KentClasses[text].specialUrl || EdlinePrefix + KentClasses[text].classCode);
+	if (URL = isValidClassCode(text.toUpperCase())){
+		navigate(URL);
 	} else {
-		alert(`Class ${text} does not exist. Try again!`);
+		alert(`Teacher ${text} does not exist. Try again!`);
 	}
 });

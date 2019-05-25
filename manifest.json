@@ -1,41 +1,18 @@
 {
   "name": "RedSearch",
-  "description": "Get to any class page quickly! Try typing 'red' in your omnibox (address bar), opening a new tab or clicking the RedSearch logo in your toolbar (next to the address bar) to begin.",
+  "description": "Get to any teacher page quickly! Try typing 'red' and a tab in your omnibox, then entering your teacher's last name.",
   "omnibox": {
     "keyword": "red"
   },
-  "permissions": [
-    "storage",
-		"http://broaderator.com/"
-   ],
-  "options_page": "options.html",
   "background": {
     "scripts": ["background.js"]
-  },
-  "browser_action": {
-    "default_icon": "icon.png",
-    "default_popup": "newtab.html"
   },
   "icons": {
      "16": "icon.png",
      "48": "icon.png",
      "128": "icon.png"
   },
-  "version": "0.7.1",
+  "version": "0.0.1",
   "minimum_chrome_version": "44",
-  "manifest_version": 2,
-  "content_scripts": [
-    {
-      "matches": [
-        "https://www.google.com/_/chrome/newtab*"
-      ],
-      "js": ["newtab.js"]
-    }
-  ],
-  "web_accessible_resources": [
-    "newtab.html",
-    "popup.js",
-    "icon.png",
-    "options.html"
-  ]
+  "manifest_version": 2
 }
